@@ -189,6 +189,11 @@ if (isset($_GET['tanggal_awal'])) {
 
 <script !src="">
     function formatRupiah(value) {
+        // Cek jika nilai null atau 0
+        if (value === null || value === 0) {
+            return '';
+        }
+
         var number_string = value.toString();
         var split = number_string.split(',');
         var sisa = split[0].length % 3;
